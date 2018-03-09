@@ -11,23 +11,22 @@ if(empty($_POST['name'])){
 
 require 'bdd/myBase.php';
 
-$results= null;
-$count = 0;
 $tab = null;
-$pattern = '#'.strtolower($_POST['name']).'#';
+
 
 if(empty($newTab)){
 	echo 'La table de donnée est vide';
 	exit();
 }
 
+
 foreach ($newTab as $key => $person) {
-	if ( preg_match($pattern, strtolower($person['prenom']) ) ){
-		$tab[]=$key;
-	}
-	if ( preg_match($pattern, strtolower($person['nom']) ) ){
-		$tab[]=$key;
-	}	
+  if (strpos($person['prenom'] ,$_POST['name'] ) ){
+    $tab[]=$key;
+  }
+ if (strpos($person['nom'] , $_POST['name'] )){
+    $tab[]=$key;
+  } 
 }
 
 if(empty($tab)){
