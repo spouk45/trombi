@@ -5,7 +5,7 @@ $trombi = [
 
 ];
 
-$temp = '
+$content = '
 Steven Grillon steven.grillon.45@gmail.com Edwin Gerard edwin.gerard1@gmail.com Brice Jaugin contact@bricej3d.fr Matthieu Carlevaris matth.carlevaris@gmail.com Emilie Berger emibgr@gmail.com Alabed ahmoud ziadoof@gmail.com Yoan Beauchamp yoan.beauchamp@gmail.com Damien Sedira es.todo78@yahoo.fr Sébastien Huet sebstn.hkzt@laposte.net Benjamin Berthier benjamin.berthier.mail@gmail.com Clement Paquin clement.paquin@gmail.com 
 Anas Grina 
 anas.grina@hotmail.fr 
@@ -47,7 +47,7 @@ Quentin Picart
 quentin.picart@gmail.com
 ';
 
-$myTab = explode(" ",$temp);
+$myTab = explode(" ",$content);
 $newTab = null;
 foreach($myTab as $key => $value){
 	$myTab[$key] = trim($value);

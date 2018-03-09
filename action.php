@@ -5,9 +5,6 @@ if (!isset($_POST['name'])){
 	exit();
 }
 
-if(empty($_POST['name'])){
-	exit();
-}
 
 require 'bdd/myBase.php';
 
@@ -20,23 +17,31 @@ if(empty($newTab)){
 }
 
 
-foreach ($newTab as $key => $person) {
-  if (strpos($person['prenom'] ,$_POST['name'] ) ){
-    $tab[]=$key;
+
+if(!empty($_POST['name'])){
+  
+
+  foreach ($newTab as $key => $person) {
+    if (stristr($person['prenom'] ,$_POST['name'] ) ){
+      $tab[]=$key;
+    }
+   if (stristr($person['nom'] , $_POST['name'] )){
+      $tab[]=$key;
+    } 
   }
- if (strpos($person['nom'] , $_POST['name'] )){
-    $tab[]=$key;
-  } 
+
+  if(empty($tab)){
+  	echo 'Pas de résultats';
+  	exit();
+  }
+
+  $tab = array_unique($tab);
+
 }
-
-if(empty($tab)){
-	echo 'Pas de résultats';
-	exit();
+else {
+  $tab = null;
 }
-
-$tab = array_unique($tab);
-
-/*?><pre><?php print_r($tab);?><pre>*/
+/* ?><pre><?php print_r($tab);?><pre> <? */
 
 	//header('Location: localhost:8000?tab=$tab');
 
@@ -53,13 +58,15 @@ $tab = array_unique($tab);
       </tr>
     </thead>
     <tbody>
-    	<?php foreach ($tab as $indice){ ?>
-      <tr data-toggle="modal" data-target="#myModal">
-        <td><?php echo $newTab[$indice]['prenom'];?></td>
-        <td><?php echo $newTab[$indice]['nom']; ?></td>
-        <td><?php echo $newTab[$indice]['mail'];?></td>
-      </tr>
-  		<?php } ?>
+
+      <?php 
+      if(empty($tab)){
+        require 'inc/all_person.php';
+      }
+      else{
+        require 'inc/selected_person.php';
+      }
+      ?>
       
     </tbody>
   </table>
