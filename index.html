@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet"/>
+  <title>Trombi.yoyo</title>
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Muli" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="container">
+<section class="text-center">
+
+	 <form action="action.php" method="POST" id="form">
+
+	 
+	  <div class="form-group text-center">
+	  	<h1>Qui cherchez vous ?</h1>
+	    <label for="name"></label>
+	    <input type="text" class="form-control" id="name" name="name" placeholder="Entrez un nom ou prénom">
+	  </div>
+	   
+	  <button type="submit" name="formWho" class="btn btn-primary">Submit</button>
+	</form> 
+
+</section>
+<section id="resultContent" class="mt-5">
+	<div class="row">
+		<div class="col-12" id="result">
+				
+		</div>
+	</div>
+</section>
+
+</div>
+<footer>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	/**/
+	
+		$('#form').submit(function(e){
+			e.preventDefault();
+			var $this = $(this);
+			var url = $this.attr("action");
+			$.post(url,$this.serialize()).done(function(data){
+				$('#result').html(data);
+			});
+			
+		});
+	
+
+	$('#name').keyup(function(){
+		$('#form').trigger("submit");
+	});
+</script>
+</body>
+</html>
+
+
