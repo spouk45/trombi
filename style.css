@@ -1,0 +1,19 @@
+body {
+	 font-family: 'Raleway', sans-serif;
+}
+
+
+.table-modal tbody tr:hover{
+	background-color: rgba(0,0,0,0.2);
+	cursor: pointer;
+}
+
+#trombi {
+	display:none;
+}
+
+#trombi figure:hover {
+	cursor: pointer;
+	box-shadow: 0px 0px 5px 5px #656565;
+}
+

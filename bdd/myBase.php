@@ -1,76 +1,218 @@
-<?php
+<?php 
 
 
-$trombi = [
+$persons = array (
+  
 
-];
+   array (
+            'prenom' => 'Steven',
+            'nom' => 'Grillon',
+            'mail' => 'steven.grillon.45@gmail.com',
+        ),
 
-$content = '
-Steven Grillon steven.grillon.45@gmail.com Edwin Gerard edwin.gerard1@gmail.com Brice Jaugin contact@bricej3d.fr Matthieu Carlevaris matth.carlevaris@gmail.com Emilie Berger emibgr@gmail.com Alabed ahmoud ziadoof@gmail.com Yoan Beauchamp yoan.beauchamp@gmail.com Damien Sedira es.todo78@yahoo.fr Sébastien Huet sebstn.hkzt@laposte.net Benjamin Berthier benjamin.berthier.mail@gmail.com Clement Paquin clement.paquin@gmail.com 
-Anas Grina 
-anas.grina@hotmail.fr 
-Raphael Mouton 
-raphaelmouton@live.fr 
-Julien Hoste 
-hostejulien@gmail.com 
-Julia Limousin 
-julia.limousin@gmail.com 
-Anthony Sottejeau 
-anthony.sottejeau@gmail.com 
-Erwann Danguy 
-erwann0danguy@gmail.com 
-Cyril Do 
-cyrildo@yahoo.fr 
-Julien Bourgadel 
-bjulien00@gmail.com 
-Anthony Pointu 
-p.anthony18@live.fr 
-Julien Alexandre 
-julien.alexandre26@gmail.com 
-Thomas Hubert 
-mr.thomas.hubert@gmail.com 
-Louise Roy 
-louise.roy@hotmail.fr 
-Jérôme Legrand 
-jerome.legrand4537@hotmail.com 
-Xavier Meckler 
-xmeckler@gmail.com 
-Nicolas Juin 
-juin.nicolas@gmail.com 
-Maxime Goyard 
-maxime.goyard@live.fr 
-Thomas Essoungou 
-essoungou_thomas@hotmail.fr 
-Arnaud Gauthier 
-vilc86@hotmail.com 
-Quentin Picart 
-quentin.picart@gmail.com
-';
+   array
+        (
+            'prenom' => 'Edwin',
+            'nom' => 'Gerard',
+            'mail' => 'edwin.gerard1@gmail.com',
+        ),
 
-$myTab = explode(" ",$content);
-$newTab = null;
-foreach($myTab as $key => $value){
-	$myTab[$key] = trim($value);
+   array
+        (
+            'prenom' => 'Brice',
+            'nom' => 'Jaugin',
+            'mail' => 'contact@bricej3d.fr',
+        ),
 
-} 
-$i=0;
-foreach ($myTab as $key => $value){
-	
-	
-	if( $key % 3 == 0 ){ // prenom
-		//$newTab= [$i]['prenom' => $value ];
-		$newTab[$i]['prenom'] = $value;
-		
-	}
-	if( $key % 3 == 1 ){ // nom
-		$newTab[$i]['nom'] = $value;
-	}
-	if( $key % 3 == 2 ){ // mail
-		$newTab[$i]['mail'] = $value;
-		$i++;
-	}
+   array
+        (
+            'prenom' => 'Matthieu',
+            'nom' => 'Carlevaris',
+            'mail' => 'matth.carlevaris@gmail.com',
+        ),
 
-}
-/*?><pre><?php print_r($newTab); ?></pre>*/
+   array
+        (
+            'prenom' => 'Emilie',
+            'nom' => 'Berger',
+            'mail' => 'emibgr@gmail.com',
+        ),
 
+   array
+        (
+            'prenom' => 'Mahmoud',
+            'nom' => 'Alabed',
+            'mail' => 'ziadoof@gmail.com',
+        ),
 
+   array
+        (
+            'prenom' => 'Yoan',
+            'nom' => 'Beauchamp',
+            'mail' => 'yoan.beauchamp@gmail.com',
+        ),
+
+   array
+        (
+            'prenom' => 'Damien',
+            'nom' => 'Sedira',
+            'mail' => 'es.todo78@yahoo.fr',
+        ),
+
+   array
+        (
+            'prenom' => 'Sébastien',
+            'nom' => 'Huet',
+            'mail' => 'sebstn.hkzt@laposte.net',
+        ),
+
+   array
+        (
+            'prenom' => 'Benjamin',
+            'nom' => 'Berthier',
+            'mail' => 'benjamin.berthier.mail@gmail.com',
+        ),
+
+     array
+        (
+            'prenom' => 'Clement',
+            'nom' => 'Paquin',
+            'mail' => 'clement.paquin@gmail.com',
+        ),
+
+     array
+        (
+            'prenom' => 'Anas',
+            'nom' => 'Grina',
+            'mail' => 'anas.grina@hotmail.fr',
+        ),
+
+     array
+        (
+            'prenom' => 'Raphael',
+            'nom' => 'Mouton',
+            'mail' => 'raphaelmouton@live.fr',
+        ),
+
+     array
+        (
+            'prenom' => 'Julien',
+            'nom' => 'Hoste',
+            'mail' => 'hostejulien@gmail.com',
+        ),
+
+     array
+        (
+            'prenom' => 'Julia',
+            'nom' => 'Limousin',
+            'mail' => 'julia.limousin@gmail.com',
+        ),
+
+     array
+        (
+            'prenom' => 'Anthony',
+            'nom' => 'Sottejeau',
+            'mail' => 'anthony.sottejeau@gmail.com',
+        ),
+
+     array
+        (
+            'prenom' => 'Erwann',
+            'nom' => 'Danguy',
+            'mail' => 'erwann0danguy@gmail.com',
+        ),
+
+     array
+        (
+            'prenom' => 'Cyril',
+            'nom' => 'Do',
+            'mail' => 'cyrildo@yahoo.fr',
+        ),
+
+     array
+        (
+            'prenom' => 'Julien',
+            'nom' => 'Bourgadel',
+            'mail' => 'bjulien00@gmail.com',
+        ),
+
+     array
+        (
+            'prenom' => 'Anthony',
+            'nom' => 'Pointu',
+            'mail' => 'p.anthony18@live.fr',
+        ),
+
+     array
+        (
+            'prenom' => 'Julien',
+            'nom' => 'Alexandre',
+            'mail' => 'julien.alexandre26@gmail.com',
+        ),
+
+     array
+        (
+            'prenom' => 'Thomas',
+            'nom' => 'Hubert',
+            'mail' => 'mr.thomas.hubert@gmail.com',
+        ),
+
+     array
+        (
+            'prenom' => 'Louise',
+            'nom' => 'Roy',
+            'mail' => 'louise.roy@hotmail.fr',
+        ),
+
+     array
+        (
+            'prenom' => 'Jérôme',
+            'nom' => 'Legrand',
+            'mail' => 'jerome.legrand4537@hotmail.com',
+        ),
+
+     array
+        (
+            'prenom' => 'Xavier',
+            'nom' => 'Meckler',
+            'mail' => 'xmeckler@gmail.com',
+        ),
+
+     array
+        (
+            'prenom' => 'Nicolas',
+            'nom' => 'Juin',
+            'mail' => 'juin.nicolas@gmail.com',
+        ),
+
+     array
+        (
+            'prenom' => 'Maxime',
+            'nom' => 'Goyard',
+            'mail' => 'maxime.goyard@live.fr',
+        ),
+
+     array
+        (
+            'prenom' => 'Thomas',
+            'nom' => 'Essoungou',
+            'mail' => 'essoungou_thomas@hotmail.fr',
+        ),
+
+     array
+        (
+            'prenom' => 'Arnaud',
+            'nom' => 'Gauthier',
+            'mail' => 'vilc86@hotmail.com',
+        ),
+
+     array
+        (
+            'prenom' => 'Quentin',
+            'nom' => 'Picart',
+            'mail' => 'quentin.picart@gmail.com',
+        )
+
+);
+
+ 

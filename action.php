@@ -7,11 +7,12 @@ if (!isset($_POST['name'])){
 
 
 require 'bdd/myBase.php';
+require 'bdd/myBase2.php';
 
 $tab = null;
 
 
-if(empty($newTab)){
+if(empty($persons)){
 	echo 'La table de donnée est vide';
 	exit();
 }
@@ -21,7 +22,7 @@ if(empty($newTab)){
 if(!empty($_POST['name'])){
   
 
-  foreach ($newTab as $key => $person) {
+  foreach ($persons as $key => $person) {
     if (stristr($person['prenom'] ,$_POST['name'] ) ){
       $tab[]=$key;
     }
@@ -43,21 +44,14 @@ else {
 }
 /* ?><pre><?php print_r($tab);?><pre> <? */
 
-	//header('Location: localhost:8000?tab=$tab');
+	//header('Location: localhost:8000?tab=$tab')
 
+/**/
 // ------------------- RESULTAT ----------------------
 
 
 ?>
-<table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
+
 
       <?php 
       if(empty($tab)){
@@ -68,8 +62,7 @@ else {
       }
       ?>
       
-    </tbody>
-  </table>
 
+    
   
   
